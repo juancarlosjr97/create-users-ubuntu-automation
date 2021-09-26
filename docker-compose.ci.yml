@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  ubuntu-users:
+    image: rastasheep/ubuntu-sshd:18.04
+    container_name: ubuntu-users
+    ports:
+      - "55008:22"
+    volumes:
+      - "./scripts/create-users.sh:/root/create-users.sh"
+      - "./scripts/__test__/test-users.sh:/root/test-users.sh"
+      - "./data/users.csv:/root/users.csv"
+      - "./entrypoint/docker-entrypoint.ci.sh:/usr/local/bin/dockerInit"
+    command:
+      - dockerInit
