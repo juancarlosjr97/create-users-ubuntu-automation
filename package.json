@@ -1,0 +1,49 @@
+{
+  "name": "create-users-ubuntu-automation",
+  "version": "1.0.0",
+  "description": "Create Users Ubuntu Automation",
+  "private": true,
+  "homepage": "https://github.com/juancarlosjr97/create-users-ubuntu-automation/#readme",
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "commit": "npx git-cz",
+    "postinstall": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juancarlosjr97/create-users-ubuntu-automation.git"
+  },
+  "author": "Juan Carlos Blanco Delgado",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "node": "16.9.0"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "^5.2.0",
+    "semantic-release": "^17.3.7"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
